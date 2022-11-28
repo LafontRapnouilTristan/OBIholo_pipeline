@@ -1,0 +1,61 @@
+# general params
+general:
+    cores: 8
+reads_prime:
+  - R1
+  - R2
+tomerge:
+  FALSE
+resourcesfolder:
+  resources/
+resultsfolder:
+  results/
+benchmarksfolder:
+  benchmarks/
+fastqfiles:
+  - mother_16s
+  - seedling_16s
+ # - mother_ITS2
+ # - seedling_ITS2
+  - 3840
+mergedfile:
+  holobrom_16s
+  
+# split files
+split_fastq:
+    nfiles: 1000
+    
+# align filter
+alifilt:
+  minscore: 30.00
+  
+# trim and filter
+filterandtrim:
+  truncLen: 200
+  maxN: 0
+  maxEE: 2
+  truncQ: 2
+  matchIDs: TRUE
+  verbose: TRUE
+  multithread: 8
+
+# dereplication
+dereplication:
+  simult_reads: 1e06
+
+# obiclean
+obiclean:
+  ratio: 0.05
+
+# Abundance filtering
+abb_filt: 
+  mincount: 1
+
+# clustering
+clustering:
+  minsim: 0.97
+  
+# taxa
+taxassign:
+    taxofolder: ../pipelino/TaxonomyDatabase/silva_nr_v138_train_set.fa
+    multithread: 8
