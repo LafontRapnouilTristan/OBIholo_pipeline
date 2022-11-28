@@ -29,15 +29,11 @@ split_fastq:
 alifilt:
   minscore: 30.00
   
-# trim and filter
-filterandtrim:
-  truncLen: 200
-  maxN: 0
-  maxEE: 2
-  truncQ: 2
-  matchIDs: TRUE
-  verbose: TRUE
-  multithread: 8
+# basic filt
+basicfilt:
+    minlength: 80
+    mincount: 10
+    minqual: 25
 
 # dereplication
 dereplication:

@@ -6,7 +6,7 @@ rule basicfilt:
 		config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt.fasta"
 	params:
 		minlength=config["basicfilt"]["minlength"],
-		mincount=config["basicfilt"]["mincount"]
+		mincount=config["basicfilt"]["mincount"],
 		minqual=config["basicfilt"]["minqual"]
 	log:
 		"log/{run}/basicfilt.log"

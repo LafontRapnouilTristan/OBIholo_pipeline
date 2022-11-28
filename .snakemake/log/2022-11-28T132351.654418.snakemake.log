@@ -1,0 +1,4 @@
+KeyError in line 8 of /home/ECOFOG/tristan.lafont/Desktop/OBIholo_pipeline/workflow/rules/04-basic_filtration.smk:
+'basicfilt'
+  File "/home/ECOFOG/tristan.lafont/Desktop/OBIholo_pipeline/Snakefile", line 36, in <module>
+  File "/home/ECOFOG/tristan.lafont/Desktop/OBIholo_pipeline/workflow/rules/04-basic_filtration.smk", line 8, in <module>

@@ -1,0 +1,3 @@
+SyntaxError in line 10 of /home/ECOFOG/tristan.lafont/Desktop/OBIholo_pipeline/workflow/rules/04-basic_filtration.smk:
+invalid syntax
+  File "/home/ECOFOG/tristan.lafont/Desktop/OBIholo_pipeline/Snakefile", line 36, in <module>
