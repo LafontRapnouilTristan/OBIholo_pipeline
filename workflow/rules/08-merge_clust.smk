@@ -12,5 +12,5 @@ rule merge_clust_11:
     "../envs/obi_env.yaml"
   shell:
     """
-		obiselect -c cluster -n 1 --merge sample -M -f count {input} > {output} 2> {log}
-		"""
+    obiselect -c cluster -n 1 --merge sample -M -f count {input} > {output} 2> {log}
+    """

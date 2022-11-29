@@ -1,14 +1,10 @@
 # Benchmark
 rule benchmark:
   input:
-    config["benchmarksfolder"]+"{run}/abbfilt.txt",
     config["benchmarksfolder"]+"{run}/alifilt.txt",
-    config["benchmarksfolder"]+"{run}/bimera.txt",
     config["benchmarksfolder"]+"{run}/clust.txt",
-    config["benchmarksfolder"]+"{run}/dada_prep.txt",
     config["benchmarksfolder"]+"{run}/deml.txt",
     config["benchmarksfolder"]+"{run}/derep.txt",
-    config["benchmarksfolder"]+"{run}/filt_and_trim.txt",
     config["benchmarksfolder"]+"{run}/merge_clust.txt",
     config["benchmarksfolder"]+"{run}/obiclean.txt",
     config["benchmarksfolder"]+"{run}/seq_track.txt",

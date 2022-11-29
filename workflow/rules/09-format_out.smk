@@ -12,5 +12,5 @@ rule tab_format_12:
     "../envs/obi_env.yaml"
   shell:
     """
-	  obitab -n NA -d -o {input} > {output} 2> {log}
-		"""
+    obitab -n NA -d -o {input} > {output} 2> {log}
+    """

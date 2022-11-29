@@ -23,9 +23,10 @@ report:"report/workflow.rep"
 #  input:
 #    get_input_all()
 
+
 rule all:
     input:
-        expand(config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_filt_derep_cleaned_abfilt_cl_agg.tab",run = config["fastqfiles"]),
+        expand(config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl_agg.tab",run = config["fastqfiles"]),
         expand(config["resultsfolder"]+"{run}/{run}_taxassigned.csv",run = config["fastqfiles"]),
         expand(config["resultsfolder"]+"{run}/{run}_seq_tracking.csv",run = config["fastqfiles"]),
         expand(config["benchmarksfolder"]+"{run}/{run}_benchmark.png",run = config["fastqfiles"])

@@ -2,55 +2,49 @@
 general:
     cores: 8
 reads_prime:
-  - R1
-  - R2
+    - R1
+    - R2
 tomerge:
-  FALSE
+    FALSE
 resourcesfolder:
-  resources/
+    resources/
 resultsfolder:
-  results/
+    results/
 benchmarksfolder:
-  benchmarks/
+    benchmarks/
 fastqfiles:
-  - mother_16s
-  - seedling_16s
- # - mother_ITS2
- # - seedling_ITS2
-  - 3840
+    - mother_16s
+    - seedling_16s
+#   - mother_ITS2
+#   - seedling_ITS2
+#   - 3840
 mergedfile:
-  holobrom_16s
-  
+    holobrom_16s
 # split files
 split_fastq:
     nfiles: 1000
-    
 # align filter
 alifilt:
-  minscore: 30.00
-  
+    minscore: 30.00
 # basic filt
 basicfilt:
     minlength: 80
     mincount: 10
     minqual: 25
-
 # dereplication
 dereplication:
-  simult_reads: 1e06
-
+    simult_reads: 1e06
+split_fasta:
+    nfiles: 1000
 # obiclean
 obiclean:
-  ratio: 0.05
-
+    ratio: 0.05
 # Abundance filtering
 abb_filt: 
-  mincount: 1
-
+    mincount: 1
 # clustering
 clustering:
-  minsim: 0.97
-  
+    minsim: 0.97
 # taxa
 taxassign:
     taxofolder: ../pipelino/TaxonomyDatabase/silva_nr_v138_train_set.fa

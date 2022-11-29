@@ -15,5 +15,5 @@ rule otu_clust_10:
     "../envs/suma_env.yaml"
   shell:
     """
-		sumaclust -t {params.minsim} -p {params.threads} {input} > {output}
-		"""
+    sumaclust -t {params.minsim} -p {params.threads} {input} > {output}
+    """
