@@ -13,7 +13,7 @@ tab <- data.frame(seq_id = str_extract(names(cleaned_seq),"seq[0-9]+"),
 
 tabseq<- makeSequenceTable(tab)
 taxa <- assignTaxonomy(tabseq,
-                       snakemake@input[[2]],
+                       snakemake@params[[2]],
                        multithread=snakemake@params[[1]])
 
 write.csv2(taxa, snakemake@output[[1]],row.names = F)
