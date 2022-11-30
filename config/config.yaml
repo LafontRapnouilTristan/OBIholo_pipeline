@@ -15,11 +15,12 @@ benchmarksfolder:
 fastqfiles:
     - mother_16s
     - seedling_16s
-#   - mother_ITS2
-#   - seedling_ITS2
-#   - 3840
+    - mother_ITS2
+    - seedling_ITS2
+    - comp_mother_16s
+    - mother_glom
 mergedfile:
-    holobrom_16s
+    FALSE
 # split files
 split_fastq:
     nfiles: 1000
@@ -47,5 +48,10 @@ clustering:
     minsim: 0.97
 # taxa
 taxassign:
-    taxofolder: ../pipelino/TaxonomyDatabase/silva_nr_v138_train_set.fa
+    tax_file_mother_16s: silva_nr_v138_train_set.fa
+    tax_file_seedling_16s: silva_nr_v138_train_set.fa
+    tax_file_comp_mother_16s: silva_nr_v138_train_set.fa
+    tax_file_mother_ITS2: sh_general_release_dynamic_16.10.2022.fasta
+    tax_file_seedling_ITS2: sh_general_release_dynamic_16.10.2022.fasta
+    tax_file_mother_glom: sh_general_release_dynamic_16.10.2022.fasta
     multithread: 8
