@@ -3,8 +3,16 @@
 .RData
 .Ruserdata
 .snakemake
-dag/
+dag/*
 resources/*
 log/*
 benchmarks/*
 results/*
+taxonomy_database/*
+
+!dag/.gitkeep
+!resources/.gitkeep
+!log/.gitkeep
+!benchmarks/.gitkeep
+!results/.gitkeep
+!taxonomy_database/.gitkeep
