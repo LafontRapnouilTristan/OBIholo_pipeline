@@ -1,0 +1,72 @@
+__default__:
+  jobname: "default"
+  mem: "32G"
+  cpus: 10
+  time: "01:00:00"
+
+## pairing ##
+split_fastq:
+    jobname: "split_fastq"
+    mem: "1G"
+pairing:
+    jobname: "pairing"
+    mem: "32G"
+    cpus: 100
+    time: "96:00:00"
+## alignment sorting ##
+02-sort_alignments:
+    jobname: "alifilt_02"
+    mem: "32G"
+    time: "05:00:00"
+## demultiplex ##
+03-demultiplex:
+    jobname: "demultiplex_03"
+    mem: "32G"
+    cpus: 100
+    time: "96:00:00"
+## basic filtration ##
+04-basic_filtration:
+    jobname: "basicfilt"
+    time: "05:00:00"
+## dereplication ##
+05-derep:
+    jobname: "derepl"
+    mem: "32G"
+    cpus: 40
+    time: "24:00:00"    
+## obiclean ##
+06-obi_clean:
+    jobname: "obiclean_07"
+    mem: "32G"
+    time: "24:00:00"
+## otu clustering ##
+07-otu_clust:
+    jobname: "otu_clust_10"
+    mem: "32G"
+    time: "96:00:00"
+## merge clustering ##
+08-merge_clust:
+    jobname: "merge_clust_11"
+    mem: "32G"
+    time: "96:00:00"
+## format output ##
+09-format_out:
+    jobname: "tab_format_12"
+    mem: "32G"
+    time: "96:00:00"
+## sequence tracking ##
+09-seq_tracking:
+    jobname: "seq_tracking"
+    mem: "32G"
+    time: "96:00:00"
+## taxonomy assignments ##
+09-taxassign:
+    jobname: "taxassign_12"
+    cpus: 100
+    mem: "32G"
+    time: "96:00:00"
+## Benchmark ##
+10-benchmarks:
+    jobname: "benchmark"
+    mem: "2G"
+    time: "02:00:00
