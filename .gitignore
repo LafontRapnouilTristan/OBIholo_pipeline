@@ -9,6 +9,7 @@ log/*
 benchmarks/*
 results/*
 taxonomy_database/*
+test/
 
 !dag/.gitkeep
 !resources/.gitkeep
