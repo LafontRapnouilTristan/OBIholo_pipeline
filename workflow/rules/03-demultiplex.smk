@@ -15,7 +15,7 @@ rule demultiplex_03:
         "../envs/obi_env.yaml"
     shell:
         """
-        obiannotate --without-progress-bar --sanger -S 'Avgqphred:-int(math.log10(sum(sequence.quality)/len(sequence))*10)' {input} | ngsfilter --fastq-output -t {params.ngs} -u {output.unassigned} > {output.demultiplexed} 2> {log}
+        obiannotate --without-progress-bar --sanger -S 'Avgqphred:-int(math.log10(sum(sequence.quality)/len(sequence))*10)' {input} | ngsfilter --fasta-output -t {params.ngs} -u {output.unassigned} > {output.demultiplexed} 2> {log}
         """
 
 
