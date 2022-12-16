@@ -14,5 +14,5 @@ rule basicfilt:
         "../envs/obi_env.yaml"
     shell:
         """
-        obiannotate --length -S 'GC_content:len(str(sequence).replace("a","").replace("t",""))*100/len(sequence)' {input} | obigrep -l {params.minlength} -s '^[acgt]+$' -p 'count>{params.mincount} and avg_quality>{params.minqual}' > {output} 2> {log}
+        obiannotate --length -S 'GC_content:len(str(sequence).replace("a","").replace("t",""))*100/len(sequence)' {input} | obigrep -l {params.minlength} -s '^[acgt]+$' -p 'avg_quality>{params.minqual}' > {output} 2> {log}
         """
