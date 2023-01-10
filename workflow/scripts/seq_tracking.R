@@ -55,7 +55,9 @@ df <- data.frame(step=c("aligned",
                          clust_reads,
                          agg_reads)
 )
-write.table(df,file=snakemake@output[[1]],row.names=F,sep="\t",quote=F)
+
+write.csv2(df,outs[1],row.names=F)
+
 
 # Sample wise ####
 
@@ -76,6 +78,7 @@ system(cmd3[2],intern = T)
 cmd4 <- paste0("bash workflow/scripts/count_dml ", path[3:4], " ", outs[c(2,4)] )
 system(cmd4[1],intern = T)
 system(cmd4[2],intern = T)
+
 
 
 

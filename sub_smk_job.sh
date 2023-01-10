@@ -19,4 +19,3 @@ CORES=100
 
 # Workflow
 snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going
-

@@ -18,12 +18,12 @@ fastqfiles:
     - mother_ITS2
     - seedling_ITS2
     - comp_mother_16s
-    - mother_glom
+#   - mother_glom
 mergedfile:
     FALSE
 # split files
 split_fastq:
-    nfiles: 200
+    nfiles: 2000
 # align filter
 alifilt:
     minscore: 30.00
@@ -36,7 +36,7 @@ basicfilt:
 dereplication:
     simult_reads: 1000
 split_fasta:
-    nfiles: 25
+    nfiles: 2000
 # obiclean
 obiclean:
     ratio: 1
@@ -55,4 +55,3 @@ taxassign:
     tax_file_seedling_ITS2: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
     tax_file_mother_glom: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
     multithread: 10
-    
