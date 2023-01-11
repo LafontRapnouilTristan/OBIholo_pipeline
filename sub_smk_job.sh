@@ -18,4 +18,5 @@ COMMAND="sbatch --cpus-per-task={cluster.cpus} --time={cluster.time} --mem={clus
 CORES=100
 
 # Workflow
+mkdir -p snake_subjob_log
 snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going
