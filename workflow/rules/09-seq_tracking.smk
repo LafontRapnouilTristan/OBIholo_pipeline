@@ -19,10 +19,17 @@ rule seq_tracking:
     config["resultsfolder"]+"{run}/{run}_clust.sampstat",
     config["resultsfolder"]+"{run}/{run}_agg.sampstat"
   params:
+<<<<<<< HEAD
+    config["resultsfolder"]+"{run}/{run}_derep",
+    config["resultsfolder"]+"{run}/{run}_clean",
+    config["resultsfolder"]+"{run}/{run}_clust",
+    config["resultsfolder"]+"{run}/{run}_agg"
+=======
     "derep",
     "clean",
     "clust",
     "agg"
+>>>>>>> 6ffcbafa072b52e38e354a3e8c4c1527753d7bd1
   benchmark:
     "benchmarks/{run}/seq_track.txt"
   log:

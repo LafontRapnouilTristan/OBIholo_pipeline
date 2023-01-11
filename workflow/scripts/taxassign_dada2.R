@@ -16,4 +16,6 @@ taxa <- assignTaxonomy(tabseq,
                        snakemake@params[[2]],
                        multithread=snakemake@params[[1]])
 
+taxa <-cbind(sequences=rownames(taxa),taxa)
+
 write.csv2(taxa, snakemake@output[[1]],row.names = F)

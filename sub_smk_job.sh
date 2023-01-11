@@ -1,7 +1,11 @@
 #!/bin/bash
 #SBATCH -J snakeflow
 #SBATCH -p unlimitq
+<<<<<<< HEAD
 #SBATCH --mem=1G
+=======
+#SBATCH --mem=10G
+>>>>>>> c1d127c468151a2de2e7f677dc662accc58cc503
 #SBATCH --cpus-per-task=1
 #SBATCH -o snakemake_output_%j.out
 #SBATCH -e snakemake_error_%j.err
@@ -20,4 +24,3 @@ CORES=100
 # Workflow
 mkdir -p snake_subjob_log
 snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going
-

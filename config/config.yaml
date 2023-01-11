@@ -48,11 +48,10 @@ clustering:
     minsim: 0.97
 # taxa
 taxassign:
-    tax_file_mother_16s: silva_nr_v138_train_set.fa
-    tax_file_seedling_16s: silva_nr_v138_train_set.fa
-    tax_file_comp_mother_16s: silva_nr_v138_train_set.fa
-    tax_file_mother_ITS2: sh_general_release_dynamic_16.10.2022.fasta
-    tax_file_seedling_ITS2: sh_general_release_dynamic_16.10.2022.fasta
-    tax_file_mother_glom: sh_general_release_dynamic_16.10.2022.fasta
+    tax_file_mother_16s: taxonomy_database/silva_nr_v138_train_set.fa
+    tax_file_seedling_16s: taxonomy_database/silva_nr_v138_train_set.fa
+    tax_file_comp_mother_16s: taxonomy_database/silva_nr_v138_train_set.fa
+    tax_file_mother_ITS2: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
+    tax_file_seedling_ITS2: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
+    tax_file_mother_glom: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
     multithread: 100
-    
