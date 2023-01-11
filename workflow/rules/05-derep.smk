@@ -3,7 +3,7 @@ checkpoint split_fasta:
     input:
         config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt.fasta"
     output:
-        directory("{run}_derepl_tmp")
+        directory(config["resultsfolder"]+"{run}/derepl_tmp")
     params:
         folder=config["resultsfolder"]+"{run}/derepl_tmp",
         nfiles=config["split_fasta"]["nfiles"],
@@ -70,5 +70,5 @@ rule merge_derepl:
         """
         cat {input.splitted} > {output.dereped} 2> {log}
         rm -r {params.derepl} {params.uniq}
-        tail -n +2 -q {input.benchin} | cat | awk '{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}END{print}' > {output.bench}
+        tail -n +2 -q {input.benchin} | cat | awk '{{for(i=1;i<=NF;i++)$i=(a[i]+=$i)}}END{{print}}' > {output.bench}
         """

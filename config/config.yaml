@@ -1,6 +1,6 @@
 # general params
 general:
-    cores: 8
+    cores: 100
 reads_prime:
     - R1
     - R2
@@ -18,12 +18,12 @@ fastqfiles:
     - mother_ITS2
     - seedling_ITS2
     - comp_mother_16s
-#   - mother_glom
+    - mother_glom
 mergedfile:
     FALSE
 # split files
 split_fastq:
-    nfiles: 2000
+    nfiles: 1000
 # align filter
 alifilt:
     minscore: 30.00
@@ -36,7 +36,7 @@ basicfilt:
 dereplication:
     simult_reads: 1e06
 split_fasta:
-    nfiles: 2000
+    nfiles: 1000
 # obiclean
 obiclean:
     ratio: 0.05
@@ -53,5 +53,6 @@ taxassign:
     tax_file_comp_mother_16s: silva_nr_v138_train_set.fa
     tax_file_mother_ITS2: sh_general_release_dynamic_16.10.2022.fasta
     tax_file_seedling_ITS2: sh_general_release_dynamic_16.10.2022.fasta
-#    tax_file_mother_glom: sh_general_release_dynamic_16.10.2022.fasta
-    multithread: 8
+    tax_file_mother_glom: sh_general_release_dynamic_16.10.2022.fasta
+    multithread: 100
+    

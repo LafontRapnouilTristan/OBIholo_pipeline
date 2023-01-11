@@ -2,7 +2,7 @@ __default__:
   jobname: "default"
   mem: "32G"
   cpus: 10
-  time: "01:00:00"
+  time: "02:00:00"
 
 ## pairing ##
 split_fastq:
@@ -70,3 +70,4 @@ pairing:
     jobname: "benchmark"
     mem: "2G"
     time: "02:00:00
+

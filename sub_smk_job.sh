@@ -2,9 +2,10 @@
 #SBATCH -J snakeflow
 #SBATCH -p unlimitq
 #SBATCH --mem=1G
+#SBATCH --cpus-per-task=1
 #SBATCH -o snakemake_output_%j.out
 #SBATCH -e snakemake_error_%j.err
-#SBATCH --mail-type=BEGIN,END,FAIL
+#SBATCH --mail-type=ALL
 
 # Environment
 module purge
@@ -17,4 +18,6 @@ COMMAND="sbatch --cpus-per-task={cluster.cpus} --time={cluster.time} --mem={clus
 CORES=100
 
 # Workflow
+mkdir -p snake_subjob_log
 snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going
+
