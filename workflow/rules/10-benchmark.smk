@@ -11,7 +11,9 @@ rule benchmark:
     config["benchmarksfolder"]+"{run}/tabformat.txt",
     config["benchmarksfolder"]+"{run}/taxassign.txt"
   output:
-    report("benchmarks/{run}/{run}_benchmark.png")
+    report("benchmarks/{run}/{run}_raw_benchmark.png"),
+    report("benchmarks/{run}/{run}_log_benchmark.png"),
+    "benchmarks/{run}/{run}_benchmark.csv"
   log:
     "log/{run}/benchmark.log"
   conda:
