@@ -13,9 +13,9 @@ tab <- data.frame(seq_id = str_extract(names(cleaned_seq),"(?<=; cluster=).+(?=;
 
 tabseq<- makeSequenceTable(tab)
 out <- assignTaxonomy(tabseq,
-                       snakemake@params[[2]],
-                       multithread=snakemake@params[[1]],
-                       outputBootstraps = T)
+                      snakemake@params[[2]],
+                      multithread=snakemake@params[[1]],
+                      outputBootstraps = T)
 
 out$tax <-cbind(sequences=rownames(out$tax),out$tax)
 colnames(out$boot) <- paste0(colnames(out$boot),"_boots")
