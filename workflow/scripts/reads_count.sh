@@ -17,22 +17,25 @@ out=$3 #outputfile prefix
 opreads=`echo $op.reads` #column names for reads
 opotus=`echo $op.otus` #colum names for otus
 
-echo sample "${opreads}" > reads
+reads=`echo $out.reads`
+otus=`echo $out.otus`
+
+echo sample "${opreads}" > ${reads}  # define colnames
 grep '^>' $file | awk 'BEGIN {FS="{"} {print $2}' | \
         awk 'BEGIN {FS="}"}{print $1}' | tr , '\n' | sed -e 's/://g' -e s/\'//g -e 's/^ //g' | \
-        awk -v var="${opreads}" '{a[$1]+=$2}END{for (i in a){print i,a[i]}}' | sort -k 1 >> reads
-echo sample "${opotus}" > otus
+        awk -v var="${opreads}" '{a[$1]+=$2}END{for (i in a){print i,a[i]}}' | sort -k 1 >> ${reads}
+echo sample "${opotus}" > ${otus}
 grep '^>' "${file}" | awk 'BEGIN {FS="{"} {print $2}' | \
         awk 'BEGIN {FS="}"}{print $1}' | tr , '\n' | sed -e 's/://g' -e s/\'//g -e 's/^ //g' | \
-        sort | awk '{print $1}' | uniq -c | awk -v var="${opotus}" '{print $2, $1}' >> otus
+        sort | awk '{print $1}' | uniq -c | awk -v var="${opotus}" '{print $2, $1}' >> ${otus}
 
 if [ -f "${out}".sampstat ]; then
-        awk 'NR==FNR{a[$1]=$2; next}{print $0, a[$1]}' reads otus > tmp
+        awk 'NR==FNR{a[$1]=$2; next}{print $0, a[$1]}' ${reads} ${otus} > tmp
         awk 'NR==FNR{a[$1]=$2 FS $3; next}{print $0, a[$1]}' tmp "${out}".sampstat > $$
         mv $$ "${out}".sampstat
         rm tmp
 else
-        awk 'NR==FNR{a[$1]=$2; next}{print $0, a[$1]}' reads otus > "${out}".sampstat
+        awk 'NR==FNR{a[$1]=$2; next}{print $0, a[$1]}' ${reads} ${otus} > "${out}".sampstat
 fi
 
-rm reads otus
+rm ${reads} ${otus}

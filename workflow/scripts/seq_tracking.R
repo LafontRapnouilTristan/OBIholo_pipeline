@@ -55,30 +55,31 @@ df <- data.frame(step=c("aligned",
                          clust_reads,
                          agg_reads)
 )
-
-write.csv2(df,outs[1],row.names=F)
-
+write.table(df,file=outs[[1]],row.names=F,sep="\t",quote=F)
 
 # Sample wise ####
 
 # sample wise derepled
 
-cmd2 <- paste0("bash workflow/scripts/reads_count.sh ", path[5:8], " derepl ", params)
+cmd2 <- paste0("bash workflow/scripts/reads_count.sh ", path[5], " derepl ", params[1])
 system(cmd2[1],intern = T)
-system(cmd2[2],intern = T)
-system(cmd2[3],intern = T)
-system(cmd2[4],intern = T)
+
+params_names <- NULL 
+for (i in 2:4){
+  params_names <- c(params_names, tail(unlist(strsplit(params[[i]],"_")),1))
+} 
+
+cmd3 <- paste0("bash workflow/scripts/reads_count_2.sh ", path[6:8]," ", params_names ," ", params[2:4])
+system(cmd3[1],intern = T)
+system(cmd3[2],intern = T)
+system(cmd3[3],intern = T)
 # sample wise dml and basfilt
 
 #reads
-cmd3 <- paste0("grep -o -P 'sample_ID=.{1,10};' ", path[3:4],"| sort | uniq -c | sed 's/sample_ID=//g' | sed 's/;//g' > ", outs[c(3,5)])
-system(cmd3[1],intern = T)
-system(cmd3[2],intern = T)
-#uniqseq 
-cmd4 <- paste0("bash workflow/scripts/count_dml ", path[3:4], " ", outs[c(2,4)] )
+cmd4 <- paste0("grep -o -P 'sample_ID=.{1,10};' ", path[3:4],"| sort | uniq -c | sed 's/sample_ID=//g' | sed 's/;//g' > ", outs[c(3,5)])
 system(cmd4[1],intern = T)
 system(cmd4[2],intern = T)
-
-
-
-
+#uniqseq 
+cmd5 <- paste0("bash workflow/scripts/count_dml ", path[3:4], " ", outs[c(2,4)] )
+system(cmd5[1],intern = T)
+system(cmd5[2],intern = T)
