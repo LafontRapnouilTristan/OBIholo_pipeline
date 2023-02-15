@@ -1,7 +1,7 @@
 # taxassign
-rule taxassign_12:
+rule taxassign:
   input:
-    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl_agg.fasta"
+    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cl_agg.fasta"
   output:
     config["resultsfolder"]+"{run}/{run}_taxassigned.csv"
   params:

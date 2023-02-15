@@ -1,5 +1,5 @@
 # DEMULTIPLEXING
-rule demultiplex_03:
+rule demultiplex:
     input:
         config["resultsfolder"]+"{run}/{run}_R1R2_good.fastq"
     output:

@@ -1,9 +1,9 @@
 # TAB FORMATTING
-rule tab_format_12:
+rule tab_format:
   input:
-    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl_agg.fasta"
+    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cl_agg.fasta"
   output:
-    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl_agg.tab"
+    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cl_agg.tab"
   benchmark:
     "benchmarks/{run}/tabformat.txt"   
   log:

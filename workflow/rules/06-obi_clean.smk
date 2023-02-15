@@ -1,5 +1,5 @@
 # Obiclean
-rule obiclean_07:
+rule obiclean:
   input: 
     config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl.fasta"
   output:
@@ -14,5 +14,5 @@ rule obiclean_07:
     "../envs/obi_env.yaml"
   shell:
     """
-    obiclean -r {params.ratio} -H {input} > {output}
+    obiclean -s merged_sample -r {params.ratio} -H {input} > {output}
     """

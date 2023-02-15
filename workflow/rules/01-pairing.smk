@@ -14,7 +14,7 @@ checkpoint split_fastq:
         "../envs/obi_env.yaml"
     shell:
         """
-        mkdir {params.folder}
+        mkdir -p {params.folder}
         obidistribute -n {params.nfiles} -p {params.R1} {input.R1}
         obidistribute -n {params.nfiles} -p {params.R2} {input.R2}
         """

@@ -6,7 +6,7 @@ rule benchmark:
     config["benchmarksfolder"]+"{run}/deml.txt",
 #    config["benchmarksfolder"]+"{run}/derep.txt",
     config["benchmarksfolder"]+"{run}/merge_clust.txt",
-    config["benchmarksfolder"]+"{run}/obiclean.txt",
+#    config["benchmarksfolder"]+"{run}/obiclean.txt",
     config["benchmarksfolder"]+"{run}/seq_track.txt",
     config["benchmarksfolder"]+"{run}/tabformat.txt",
     config["benchmarksfolder"]+"{run}/taxassign.txt"

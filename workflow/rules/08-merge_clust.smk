@@ -1,9 +1,9 @@
 # MERGE CLUSTERS
-rule merge_clust_11:
+rule merge_clust:
   input:
-    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl.fasta"
+    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cl.fasta"
   output:
-    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cleaned_cl_agg.fasta"
+    config["resultsfolder"]+"{run}/{run}_R1R2_good_demultiplexed_basicfilt_derepl_cl_agg.fasta"
   benchmark:
     "benchmarks/{run}/merge_clust.txt" 
   log:

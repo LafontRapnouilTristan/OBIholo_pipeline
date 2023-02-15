@@ -15,27 +15,25 @@ cmd <- paste0("grep -c '@' " ,path[1:2])
 ali <- system(cmd[1],intern = T)
 qualali <- system(cmd[2],intern = T)
 #fasta
-cmd <- paste0("grep -c '>' " ,path[3:8])
+cmd <- paste0("grep -c '>' " ,path[3:7])
 dml <- system(cmd[1],intern = T)
 basicfilt <- system(cmd[2],intern = T)
 derep <- system(cmd[3],intern = T)
-clean <- system(cmd[4],intern = T)
-clust <- system(cmd[5],intern = T)
-agg <- system(cmd[6],intern = T)
+clust <- system(cmd[4],intern = T)
+agg <- system(cmd[5],intern = T)
 
 # reads count
-cmd <- paste0("grep -o -P '(?<=\\scount=)[0-9]+' ",path[5:8]," | awk -F: '{n+=$1} END {print n}'" )
+cmd <- paste0("grep -o -P '(?<=\\scount=)[0-9]+' ",path[5:7]," | awk -F: '{n+=$1} END {print n}'" )
 derep_reads <- system(cmd[1],intern = T)
-clean_reads <- system(cmd[2],intern = T)
-clust_reads <- system(cmd[3],intern = T)
-agg_reads <- system(cmd[4],intern = T)
+clust_reads <- system(cmd[2],intern = T)
+agg_reads <- system(cmd[3],intern = T)
 
 df <- data.frame(step=c("aligned",
                         "alignement qality filtering",
                         "demultiplexing",
                         "basic filtration",
                         "dereplication",
-                        "obiclean",
+                      #  "obiclean",
                         "clustering",
                         "merging cluster"),
                  total_sequence=c(ali,
@@ -43,7 +41,7 @@ df <- data.frame(step=c("aligned",
                                   dml,
                                   basicfilt,
                                   derep,
-                                  clean,
+                              #    clean,
                                   clust,
                                   agg),
                  reads=c(ali,
@@ -51,7 +49,7 @@ df <- data.frame(step=c("aligned",
                          dml,
                          basicfilt,
                          derep_reads,
-                         clean_reads,
+                      #   clean_reads,
                          clust_reads,
                          agg_reads)
 )
@@ -65,14 +63,13 @@ cmd2 <- paste0("bash workflow/scripts/reads_count.sh ", path[5], " derepl ", par
 system(cmd2[1],intern = T)
 
 params_names <- NULL 
-for (i in 2:4){
+for (i in 2:3){
   params_names <- c(params_names, tail(unlist(strsplit(params[[i]],"_")),1))
 } 
 
-cmd3 <- paste0("bash workflow/scripts/reads_count_2.sh ", path[6:8]," ", params_names ," ", params[2:4])
+cmd3 <- paste0("bash workflow/scripts/reads_count_2.sh ", path[6:7]," ", params_names ," ", params[2:3])
 system(cmd3[1],intern = T)
 system(cmd3[2],intern = T)
-system(cmd3[3],intern = T)
 # sample wise dml and basfilt
 
 #reads
