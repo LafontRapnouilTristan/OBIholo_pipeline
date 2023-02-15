@@ -164,10 +164,10 @@ options :
 
 For each step of the workflow, computes the total number of sequences and reads using basic bash commands.
 
-Check seq_tracking.R and associated reads_count.sh, reads_count_2.sh and count_dml scripts.
+Check `seq_tracking.R` and associated `reads_count.sh`, `reads_count_2.sh` and `count_dml` scripts.
 
 ## XI Benchmark 
 
 For each step of the workflow, computes the amount of time and computing resources used and plot them.
 
-Done with the benchmark.R script, get all benchmark info produced in the benchmark folder and plot them to have an overall assessment of the resources used for your computation.
+Done with the `benchmark.R` script, get all benchmark info produced in the benchmark folder and plot them to have an overall assessment of the resources used for your computation.
