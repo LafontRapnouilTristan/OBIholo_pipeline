@@ -1,13 +1,15 @@
 # OBIholo_pipeline
-Metabarcoding pipeline for the HOLOBROM project data using the OBItools.
+Metabarcoding pipeline for the HOLOBROM project.
+
+This workflow is based on the [pipeline of Anne-Sophie Benoiston](https://github.com/AnneSoBen/obitools_workflow).
+
+It aims to respect the [FAIR](https://www.go-fair.org/fair-principles/) principles using [snakemake](https://snakemake.readthedocs.io/en/stable/#) workflow builder. 
 
 This pipeline starts from raw foward (R1) and reverse (R2) `.fastq` files and a `.tab` ngsfilter file.
 
-This pipeline aims to respects the [FAIR](https://www.go-fair.org/fair-principles/) principles using [snakemake](https://snakemake.readthedocs.io/en/stable/#). 
-
 # Description
 
-Pipeline for raw NGS metabarcoding data processing using a combination of the OBItools, dada2 and sumaclust.
+Pipeline for raw NGS metabarcoding data processing using a combination of the [**OBItools**](https://pythonhosted.org/OBITools/welcome.html), [**dada2**](https://github.com/benjjneb/dada2) and [**sumaclust**](https://git.metabarcoding.org/obitools/sumaclust/-/wikis/home).
 
 You'll find parameters used by the pipeline in the [config file](config/config.yaml).
 
