@@ -13,7 +13,7 @@ You'll find parameters used by the pipeline in the [config file](config/config.y
 
 DAG of the pipeline:
 
-![DAG of the pipeline](dag/dag.png).
+![DAG of the pipeline](doc/dag.svg).
 
 # Input
 
