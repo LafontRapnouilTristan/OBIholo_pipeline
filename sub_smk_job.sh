@@ -1,11 +1,7 @@
 #!/bin/bash
 #SBATCH -J snakeflow
 #SBATCH -p unlimitq
-<<<<<<< HEAD
 #SBATCH --mem=1G
-=======
-#SBATCH --mem=10G
->>>>>>> c1d127c468151a2de2e7f677dc662accc58cc503
 #SBATCH --cpus-per-task=1
 #SBATCH -o snakemake_output_%j.out
 #SBATCH -e snakemake_error_%j.err
@@ -18,9 +14,9 @@ module load system/Miniconda3-4.7.10
 
 # Variables
 CONFIG=config/resources_genologin.yaml
-COMMAND="sbatch --cpus-per-task={cluster.cpus} --time={cluster.time} --mem={cluster.mem} -J {cluster.jobname} -o snake_subjob_log/{cluster.jobname}.%N.%j.out -e snake_subjob_log/{cluster.jobname}.%N.%j.err"
+COMMAND="sbatch --cpus-per-task={cluster.cpus} --time={cluster.time} --mem={cluster.mem} -J {cluster.jobname} -o snake_subjob_log/{cluster.jobname}.%N.%j.out -e snake_subjob_log/{cluster.jobname}.%N.%j.err -p {cluster.partition}"
 CORES=100
 
 # Workflow
 mkdir -p snake_subjob_log
-snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going
+snakemake -s Snakefile --use-conda --cluster-config $CONFIG --cluster "$COMMAND" --jobs $CORES --keep-going --latency-wait 50
