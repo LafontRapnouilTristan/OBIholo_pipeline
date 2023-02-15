@@ -23,29 +23,31 @@ mergedfile:
     FALSE
 # split files
 split_fastq:
-    nfiles: 1000
+    nfiles: 200
 # align filter
 alifilt:
     minscore: 30.00
 # basic filt
 basicfilt:
-    minlength: 80
-    mincount: 2
+    minlength: 150
+    mincount: 1
     minqual: 20
 # dereplication
 dereplication:
-    simult_reads: 1e06
+    simult_reads: 1000
 split_fasta:
-    nfiles: 1000
+    nfiles: 25
 # obiclean
-obiclean:
-    ratio: 0.05
+#obiclean:
+#    ratio: 0.05
 # Abundance filtering
 abb_filt: 
     mincount: 1
 # clustering
 clustering:
     minsim: 0.97
+    ratio: 0.1
+    cores: 30
 # taxa
 taxassign:
     tax_file_mother_16s: taxonomy_database/silva_nr_v138_train_set.fa
@@ -54,4 +56,5 @@ taxassign:
     tax_file_mother_ITS2: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
     tax_file_seedling_ITS2: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
     tax_file_mother_glom: taxonomy_database/sh_general_release_dynamic_16.10.2022.fasta
-    multithread: 100
+    multithread: 10
+    

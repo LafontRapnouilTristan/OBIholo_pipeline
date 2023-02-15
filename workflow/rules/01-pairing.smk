@@ -47,7 +47,7 @@ def aggregate_R1R2(wildcards):
 	
 
 # MERGE PAIRED FILES
-rule merge_paired_01:
+rule merge_paired:
     input:
         aggregate_R1R2
     output:	
