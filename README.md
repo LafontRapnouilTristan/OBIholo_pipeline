@@ -33,7 +33,7 @@ Additionally, you will need a text file named *XXX_ngsfilter.tab* as required by
 
 # Pipeline steps and tools
 
-## I pairing
+## I- Pairing
 
 **a** - split fasq for faster processing
 
@@ -50,7 +50,7 @@ options :
 
 basic cat and rm UNIX commands.
 
-## II Filtering on alignment score
+## II- Filtering on alignment score
 
 **OBItools** - [*obiannotate*](https://pythonhosted.org/OBItools/scripts/obiannotate.html)
 
@@ -65,7 +65,7 @@ options :
   
   - `-p` : prefix of the resulting files.
 
-## III Demultiplexing
+## III- Demultiplexing
 
 **a** - annotate average phred quality
 
@@ -83,7 +83,7 @@ options :
   Check [input](##Required) for details about input format.
   - `-u` : name of the unassigned output file.
 
-## IV Filtering on length, count and quality
+## IV- Filtering on length, count and quality
 
 **OBItools** - [*obiannotate*](https://pythonhosted.org/OBItools/scripts/obiannotate.html)
 
@@ -98,7 +98,7 @@ options :
   - `-s`: grep sequence pattern, '^[acgt]+$' to remove all sequence containing ambiguous nucleotides.
   - `-p`: grep sequence based on python boolean, avg_quality>{params.minqual} to retain sequence of avg quality > to minqual threshold.
 
-## V Dereplication
+## V- Dereplication
 
 **a** - Split for faster dereplication
 
@@ -124,7 +124,7 @@ options :
 
 cat all tmp files into a derepl file and remove them.
 
-## VI OTUs formation
+## VI- OTUs formation
 
 **sumaclust** - [*sumaclust*](https://git.metabarcoding.org/OBItools/sumaclust/-/wikis/home)
 
@@ -132,7 +132,7 @@ options :
    - `-t` : Score threshold for clustering (*e.g.* 0.97).
    - `-p` : Threads to use for clustering.
    
-## VII OTUs cluster merging
+## VII- OTUs cluster merging
 
 **OBItools** - [*obiselect*](https://pythonhosted.org/OBItools/scripts/obiselect.html)
 
@@ -143,7 +143,7 @@ options :
    - `-f` :  function used to score the sequence, *i.e.* `count` to have the reads per sample.
    - `-M` : maximize the `-f` function and order sample IDs in the headers of the sequences by their reads count.
 
-## VIII Format output
+## VIII- Format output
 
 **OBItools** - [*obitab*](https://pythonhosted.org/OBItools/scripts/obitab.html)
 
@@ -152,7 +152,7 @@ options :
   - `-d` : Removes column containing the sequence definition in the output tab file.
   - `-o` : Adds an extra column at the end of the table for the sequence itself.
 
-## IX Assign taxonomy
+## IX- Assign taxonomy
 
 **dada2** - [*assignTaxonomy*](https://rdrr.io/bioc/dada2/man/assignTaxonomy.html)
 
@@ -160,14 +160,14 @@ options :
    - `refFasta` : Path to the `.fasta` database used to assign taxonomy to the sequence table.
    - `multithread` : Number of threads used to perform taxonomic assignment.
 
-## X Track reads and sequence counts
+## X- Track reads and sequence counts
 
 For each step of the workflow, computes the total number of sequences and reads using basic bash commands.
 
-Check `seq_tracking.R` and associated `reads_count.sh`, `reads_count_2.sh` and `count_dml` scripts.
+Check [`seq_tracking.R`](workflow/scripts/seq_tracking.R) and associated [`reads_count.sh`](workflow/scripts/reads_count.sh), [`reads_count_2.sh`](workflow/scripts/reads_count_2.sh) and [`count_dml`](workflow/scripts/count_dml) scripts.
 
 ## XI Benchmark 
 
 For each step of the workflow, computes the amount of time and computing resources used and plot them.
 
-Done with the `benchmark.R` script, get all benchmark info produced in the benchmark folder and plot them to have an overall assessment of the resources used for your computation.
+Done with the [`benchmark.R`](workflow/scripts/benchmark.R) script, get all benchmark info produced in the benchmark folder and plot them to have an overall assessment of the resources used for your computation.
