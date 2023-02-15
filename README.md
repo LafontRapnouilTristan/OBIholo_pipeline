@@ -1,5 +1,5 @@
 # OBIholo_pipeline
-Metabarcoding pipeline for the HOLOBROM project.
+Metabarcoding pipeline for the [HOLOBROM project](https://www6.inrae.fr/holoflux/Nos-Actions/Projets-exploratoires/HOLOBROM).
 
 This workflow is based on the [pipeline of Anne-Sophie Benoiston](https://github.com/AnneSoBen/obitools_workflow).
 
@@ -173,3 +173,8 @@ Check [`seq_tracking.R`](workflow/scripts/seq_tracking.R) and associated [`reads
 For each step of the workflow, computes the amount of time and computing resources used and plot them.
 
 Done with the [`benchmark.R`](workflow/scripts/benchmark.R) script, get all benchmark info produced in the benchmark folder and plot them to have an overall assessment of the resources used for your computation.
+
+
+# Acknowledgement and references
+
+Many tahnks to Lucie Zinger for her tips XXXXXX
